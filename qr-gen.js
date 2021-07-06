@@ -1,6 +1,10 @@
 const QR = require('qrcode')
 const EXCEL = require('xlsx') 
 
+$('input[type=file]').change(function () {
+  console.log(this.files[0].mozFullPath);
+});
+
 // the parameters for the QR .toFile prop
 const opts = {
     width: 158,
@@ -24,6 +28,6 @@ const MY_DATA = EXCEL.utils.sheet_to_json(ws)
 
 // console.log(MY_DATA)
 
-MY_DATA.forEach(function(a_row) {
-    generateQR(a_row.Cedula, a_row.NombreParticipante)
-})
+// MY_DATA.forEach(function(a_row) {
+//     generateQR(a_row.Cedula, a_row.NombreParticipante)
+// })
